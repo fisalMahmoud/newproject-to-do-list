@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo-list</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" >
+   
+</head>
+<body>
+    <!-- Input Section -->
+    <section class="input-section">
+        <div class="container">
+            <h2 class="section-title">Add New Task</h2>
+            <form class="task-form">
+                <div class="input-wrapper">
+                    <span class="input-icon">
+                        <i class="fa-solid fa-note-sticky"></i>
+                    </span>
+                    <input type="text" 
+                           id="taskInput" 
+                           class="task-input"
+                           placeholder="Enter task description...">
+                </div>
+                <div id="inputErrors" class="error-message"></div>
+                <button type="button" 
+                        id="addTaskBtn" 
+                        class="primary-btn">
+                    Create Task
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Tasks Section -->
+    <section class="tasks-section">
+        <div class="container">
+            <h2 class="section-title">Your Tasks</h2>
+            
+            <!-- Filter Controls -->
+            <ul class="filter-controls">
+                <li data-filter="all" class="active-filter">All Tasks</li>
+                <li data-filter="completed">Completed</li>
+                <li data-filter="pending">Pending</li>
+            </ul>
+
+            <!-- Tasks Container -->
+            <div class="tasks-container" id="tasksList"></div>
+
+            <!-- Bulk Actions -->
+            <ul class="bulk-actions">
+                <li data-action="clearCompleted">Clear Completed</li>
+                <li data-action="clearAll">Clear All</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Edit Task Modal -->
+    <div class="modal edit-modal">
+        <div class="modal-content">
+            <h3>Edit Task</h3>
+            <input type="text" class="edit-input">
+            <div id="editErrors" class="error-message"></div>
+            <div class="modal-actions">
+                <button class="confirm-btn">Save</button>
+                <button class="cancel-btn">Discard</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal delete-modal">
+        <div class="modal-content">
+            <h3>Confirm Deletion</h3>
+            <p class="confirmation-text">Are you sure you want to delete?</p>
+            <div class="modal-actions">
+                <button class="confirm-btn">Delete</button>
+                <button class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>
